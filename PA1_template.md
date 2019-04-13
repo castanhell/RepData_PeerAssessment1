@@ -7,7 +7,7 @@ output:
 
 ## Importing libraries
 
-First we will import some useful dependencies and set the location for english.
+First we will import some useful dependencies.
 
 
 ```r
@@ -128,7 +128,7 @@ Here we take the average number of steps for each interval across all days. We a
 
 ```r
 avg_steps_interval <- data[complete.cases(data),] %>% group_by(interval) %>% summarise(avg = as.integer(mean(steps)))
-ggplot(avg_steps_interval,aes(x=interval,y=avg)) + geom_line(aes(x=interval,y=avg))
+ggplot(avg_steps_interval,aes(x=interval,y=avg)) + geom_line(aes(x=interval,y=avg))+ labs(y = "Average of steps", x = "Interval number")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
